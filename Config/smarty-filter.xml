@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<smartyfilters xmlns="urn:thelia:module:smarty-filter">
+    <smartyfilter code="smartyfilter.filter.email">
+        <descriptive locale="fr_FR">
+            <title>EmailFilter</title>
+            <description>Filtre pour sécurisation des emails</description>
+            <type>output</type>
+        </descriptive>
+    </smartyfilter>
+    <smartyfilter code="smartyfilter.filter.minify_html">
+        <descriptive locale="fr_FR">
+            <title>Minify HTML</title>
+            <description>Filtre pour reduction des HTML en sortie</description>
+            <type>output</type>
+        </descriptive>
+    </smartyfilter>
+</smartyfilters>

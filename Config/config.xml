@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<config xmlns="http://thelia.net/schema/dic/config"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
+
+    <loops>
+        <!-- sample definition
+        <loop name="MySuperLoop" class="SmartyFilter\Loop\MySuperLoop" />
+        -->
+        <loop name="smarty_filter" class="SmartyFilter\Loop\SmartyFilterLoop" />
+    </loops>
+
+    <forms>
+        <!--
+        <form name="MyFormName" class="SmartyFilter\Form\MySuperForm" />
+        -->
+    </forms>
+
+    <commands>
+        <!--
+        <command class="SmartyFilter\Command\MySuperCommand" />
+        -->
+    </commands>
+
+
+    <services>
+        <service id="thelia.parser" class="SmartyFilter\Parser\SmartyParser" scope="request">
+            <argument type="service" id="request" />
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="thelia.parser.context"/>
+            <argument type="service" id="thelia.template_helper"/>
+            <argument >%kernel.environment%</argument>
+            <argument >%kernel.debug%</argument>
+        </service>
+        <service id="smartyfilter.filter.email" class="SmartyFilter\Filter\EmailFilter" >
+            <tag name="thelia.parser.register_output_filter"/>
+        </service>
+        <service id="smartyfilter.filter.minify_html" class="SmartyFilter\Filter\MinifyHTMLFilter" >
+            <tag name="thelia.parser.register_output_filter"/>
+        </service>
+    </services>
+
+
+    <hooks>
+        <hook id="smartyfilter.admin.hook" class="SmartyFilter\Hook\AdminHook" scope="request">
+            <tag name="hook.event_listener" event="main.top-menu-tools" type="back" method="onMainTopMenuTools" />
+            <argument type="service" id="router.smartyfilter"/>
+        </hook>
+    </hooks>
+
+
+    <!--
+    <exports>
+
+    </exports>
+    -->
+
+    <!--
+    <imports>
+
+    </imports>
+    -->
+</config>
