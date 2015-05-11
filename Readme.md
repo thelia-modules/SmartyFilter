@@ -54,9 +54,9 @@ class EmailFilter
 
 Declare your service in the config.xml with one of the follow tags :
 
-*thelia.parser.register_pre_filter
-*thelia.parser.register_post_filter
-*thelia.parser.register_output_filter
+* thelia.parser.register_pre_filter
+* thelia.parser.register_post_filter
+* thelia.parser.register_output_filter
 
 Exemple :
 
@@ -101,11 +101,11 @@ your configuration in it as the exemple :
 |Variable   |Description |
 |---        |--- |
 |$ID    | filter's ID |
-|$IS_TRANSLATED   | Check translation for the filter |
+|$IS_TRANSLATED   | check translation for the filter |
 |$LOCALE  | the locale |
-|$TITLE  | Title string|
+|$TITLE  | title string|
 |$DESCRIPTION   | description string |
-|$ACTIVATE  | Boolean to check filter enabled or not |
+|$ACTIVATE  | boolean to check filter enabled or not |
 |$TYPE  | filter type ( pre, post, output) |
 
 
