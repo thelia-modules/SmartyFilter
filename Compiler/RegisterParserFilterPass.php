@@ -35,11 +35,9 @@ class RegisterParserFilterPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-
         $this->addFilters($container, 'pre');
         $this->addFilters($container, 'post');
         $this->addFilters($container, 'output');
-
     }
 
     public function addFilters(ContainerBuilder $container, $tag)

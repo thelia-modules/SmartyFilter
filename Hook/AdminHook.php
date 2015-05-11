@@ -23,10 +23,12 @@ use SmartyFilter\SmartyFilter;
  * Class AdminHook
  * @package SmartyFilter\Hook
  */
-class AdminHook extends BaseHook {
+class AdminHook extends BaseHook
+{
 
     protected $router;
-    public function __construct(Router $router){
+    public function __construct(Router $router)
+    {
         $this->router = $router;
     }
     protected function transQuick($id, $locale, $parameters = [])
@@ -37,7 +39,8 @@ class AdminHook extends BaseHook {
         return $this->trans($id, $parameters, SmartyFilter::DOMAIN_NAME, $locale);
     }
 
-    public function onMainTopMenuTools(HookRenderBlockEvent $event){
+    public function onMainTopMenuTools(HookRenderBlockEvent $event)
+    {
         $url = $this->router->generate("smarty_filter.list");
         $lang = $this->getSession()->getLang();
         $title = $this->transQuick("Smarty Filter", $lang->getLocale());
