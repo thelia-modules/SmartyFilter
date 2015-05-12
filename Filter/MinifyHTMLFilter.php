@@ -20,7 +20,7 @@ namespace SmartyFilter\Filter;
 class MinifyHTMLFilter
 {
 
-    public static function filter($tpl_output, $smarty)
+    public function filter($tpl_output, $smarty)
     {
         $tpl_output = preg_replace('#(?ix)(?>[^\S ]\s*|\s{2,})(?=(?:(?:[^<]++|<(?!/?(?:textarea|pre)\b))*+)(?:<(?>textarea|pre)\b|\z))#', ' ', $tpl_output);
 

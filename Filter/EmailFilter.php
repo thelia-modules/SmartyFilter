@@ -19,7 +19,7 @@ namespace SmartyFilter\Filter;
 class EmailFilter
 {
 
-    public static function filter($tpl_output, $smarty)
+    public function filter($tpl_output, $smarty)
     {
         $tpl_output =
             preg_replace('!(\S+)@([a-zA-Z0-9\.\-]+\.([a-zA-Z]{2,3}|[0-9]{1,3}))!',

@@ -142,7 +142,12 @@
             }).always(function () {
                 $("#loading-event").remove();
             }).done(function () {
-                modal.find(".modal-body").html("{intl l="Thinks to clear cache"}");
+                if (is_checked) {
+                    modal.find(".modal-body").html("{intl l="This filter is now activated"}");
+                } else {
+                    modal.find(".modal-body").html("{intl l="This filter is now desactivated"}");
+                }
+
                 modal.find(".modal-title").html("{intl l="Success"}");
                 modal.modal("show");
             }).fail(function (jqXHR, textStatus, errorThrown) {
