@@ -1,7 +1,14 @@
 {
-  "name": "your-vendor/smarty-filter-module",
+  "name": "thelia/smarty-filter-module",
   "license": "LGPL-3.0+",
   "type": "thelia-module",
+  "authors": [
+    {
+      "name": "Penalver Antony",
+      "email": "apenalver@openstudio.fr",
+      "homepage": "https://github.com/Soldras"
+    }
+  ],
   "require": {
     "thelia/installer": "~1.1"
   },
