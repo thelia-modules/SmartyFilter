@@ -4,7 +4,7 @@
     {$admin_current_location = 'filter'}
 {/block}
 
-{block name="page-title"}{intl l='Smarty Filter'}{/block}
+{block name="page-title"}{intl l='Smarty Filter' d="smartyfilter.bo.default"}{/block}
 
 {block name="check-resource"}admin.customer{/block}
 {block name="check-access"}view{/block}
@@ -14,37 +14,37 @@
         <div id="wrapper" class="container">
 
             <ul class="breadcrumb">
-                <li><a href="{url path='/admin/home'}">{intl l="Home"}</a></li>
-                <li><a href="{url path='#'}">{intl l="Filter"}</a></li>
+                <li><a href="{url path='/admin/home'}">{intl l="Home" d="smartyfilter.bo.default"}</a></li>
+                <li><a href="{url path='#'}">{intl l="Filter" d="smartyfilter.bo.default"}</a></li>
             </ul>
 
             <div class="table-responsive">
                 <table class="table table-striped table-condensed" id="customer_list">
                     <caption>
-                        {intl l="Smarty Filters list"}
+                        {intl l="Smarty Filters list" d="smartyfilter.bo.default"}
                     </caption>
 
                     {ifloop rel="smarty_filter"}
                         <thead>
                         <tr>
                             <th class="object-title">
-                                {intl l='Title'}
+                                {intl l='Title' d="smartyfilter.bo.default"}
                             </th>
 
                             <th class="object-title">
-                                {intl l='Description'}
+                                {intl l='Description' d="smartyfilter.bo.default"}
                             </th>
 
                             <th class="object-title">
-                                {intl l='Code'}
+                                {intl l='Code' d="smartyfilter.bo.default"}
                             </th>
 
                             <th class="object-title">
-                                {intl l='Type'}
+                                {intl l='Type' d="smartyfilter.bo.default"}
                             </th>
 
                             <th class="object-title">
-                                {intl l='Activate'}
+                                {intl l='Activate' d="smartyfilter.bo.default"}
                             </th>
 
                         </tr>
@@ -75,10 +75,10 @@
                                         <noscript>
                                             {if $ACTIVATE}
                                                 <a title="{intl l="Deactivate %title filter" title={$TITLE}}"
-                                                   href="{url path="/admin/smartyfilter/filter/desactivate/%id" id=$ID}">{intl l="deactivation"}</a>
+                                                   href="{url path="/admin/smartyfilter/filter/desactivate/%id" id=$ID}">{intl l="deactivation" d="smartyfilter.bo.default"}</a>
                                             {else}
                                                 <a title="{intl l="activate %title filter" title={$TITLE}}"
-                                                   href="{url path="/admin/smartyfilter/filter/activate/%id" id=$ID}">{intl l="activation"}</a>
+                                                   href="{url path="/admin/smartyfilter/filter/activate/%id" id=$ID}">{intl l="activation" d="smartyfilter.bo.default"}</a>
                                             {/if}
                                         </noscript>
                                     </div>
@@ -92,7 +92,7 @@
                         <tr>
                             <td colspan="7">
                                 <div class="alert alert-info">
-                                    {intl l='You have no registred smarty filter for the moment.'}
+                                    {intl l='You have no registred smarty filter for the moment.' d="smartyfilter.bo.default"}
                                 </div>
                             </td>
                         </tr>
@@ -143,17 +143,17 @@
                 $("#loading-event").remove();
             }).done(function () {
                 if (is_checked) {
-                    modal.find(".modal-body").html("{intl l="This filter is now activated"}");
+                    modal.find(".modal-body").html("{intl l="This filter is now activated" d="smartyfilter.bo.default"}");
                 } else {
-                    modal.find(".modal-body").html("{intl l="This filter is now desactivated"}");
+                    modal.find(".modal-body").html("{intl l="This filter is now desactivated" d="smartyfilter.bo.default"}");
                 }
 
-                modal.find(".modal-title").html("{intl l="Success"}");
+                modal.find(".modal-title").html("{intl l="Success" d="smartyfilter.bo.default"}");
                 modal.modal("show");
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 checkbox.bootstrapSwitch('toggleState', true);
-                modal.find(".modal-body").html("{intl l="An error occured"}");
-                modal.find(".modal-title").html("{intl l="Error"}");
+                modal.find(".modal-body").html("{intl l="An error occured" d="smartyfilter.bo.default"}");
+                modal.find(".modal-title").html("{intl l="Error" d="smartyfilter.bo.default"}");
                 modal.modal("show");
             });
 

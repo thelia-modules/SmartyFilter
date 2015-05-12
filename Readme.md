@@ -31,7 +31,7 @@ You can add your filter in others module and use this module to integrate it. Th
 
 ### Service
 
-First create a class with a public static method name filter. Add your filter in it.
+First create a class with a public method name filter. Add your filter in it.
 
 Exemple :
 
@@ -39,7 +39,7 @@ Exemple :
 class EmailFilter
 {
 
-    public static function filter($tpl_output, $smarty)
+    public function filter($tpl_output, $smarty)
     {
         $tpl_output =
             preg_replace('!(\S+)@([a-zA-Z0-9\.\-]+\.([a-zA-Z]{2,3}|[0-9]{1,3}))!',
