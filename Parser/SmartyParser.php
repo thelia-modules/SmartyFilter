@@ -81,7 +81,7 @@ class SmartyParser extends TheliaSmartyParser
     {
         $filters = SmartyFilterQuery::create()->find();
         foreach ($filters as $filter) {
-            $this->registerFilter('output', array(get_class($this->container->get($filter->getCode())), "filter"));
+            $this->registerFilter('output', array($this->container->get($filter->getCode()), "filter"));
         }
     }
 }
