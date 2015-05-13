@@ -32,6 +32,7 @@
             <argument type="service" id="thelia.template_helper"/>
             <argument >%kernel.environment%</argument>
             <argument >%kernel.debug%</argument>
+            <argument type="service" id="service_container" />
         </service>
         <service id="smartyfilter.filter.email" class="SmartyFilter\Filter\EmailFilter" >
             <tag name="thelia.parser.register_output_filter"/>
