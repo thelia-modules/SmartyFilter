@@ -1,6 +1,6 @@
 # Smarty Filter
 
-Allow you to add some filter in smarty render
+Allows you to add some filters in smarty render. See the documentation about what is a Smarty filter : [prefilter/postfilter](http://www.smarty.net/docs/en/plugins.prefilters.postfilters.tpl) or [outputfilter](http://www.smarty.net/docs/en/plugins.outputfilters.tpl)
 
 ## Installation
 
@@ -14,16 +14,16 @@ Allow you to add some filter in smarty render
 Add it in your main thelia composer.json file
 
 ```
-composer require your-vendor/smarty-filter-module:~1.0
+composer require thelia/smarty-filter-module:~1.0
 ```
 
 ## Usage
 
 ### Activate Filter
 
-In Tools menu clic on SmartyFilter. You just have to activate the filters you want.
+In Tools menu click on SmartyFilter. You just have to activate the filters you want.
 
-Think to clean your cache after activate or desactivate filters.
+Don't forget to clean your cache after you activate or deactivate filters.
 
 ## Add your own Filter
 
@@ -31,7 +31,7 @@ You can add your filter in others module and use this module to integrate it. Th
 
 ### Service
 
-First create a class with a public method name filter. Add your filter in it.
+First create a class with a public method named filter. Add your filter in it.
 
 Exemple :
 
@@ -68,7 +68,7 @@ Exemple :
 
 ### Configuration File
 
-To add the filter in base ( and activate it ) you have to create a configuration file name smarty-filter.xml and 
+To add the filter in the database ( and activate it ) you have to create a configuration file name smarty-filter.xml and
 your configuration in it as the exemple :
 
 ```
@@ -139,4 +139,4 @@ your configuration in it as the exemple :
         </td>
     </tr>
 {/loop}
-```                     
+```
