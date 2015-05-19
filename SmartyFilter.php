@@ -32,7 +32,7 @@ class SmartyFilter extends BaseModule
     const TAG_OUTPUT_FILTER = "thelia.parser.register_output_filter";
 
 
-    public function preActivation(ConnectionInterface $con)
+    public function preActivation(ConnectionInterface $con = null)
     {
         $insert = false;
         $activate = true;
@@ -57,7 +57,7 @@ class SmartyFilter extends BaseModule
         return $activate;
     }
 
-    public function postActivation(ConnectionInterface $con)
+    public function postActivation(ConnectionInterface $con = null)
     {
         $configurationFileHandler = new ConfigurationFileHandler;
 
