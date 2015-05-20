@@ -23,7 +23,7 @@ class EmailFilter
     {
         $tpl_output =
             preg_replace('!(\S+)@([a-zA-Z0-9\.\-]+\.([a-zA-Z]{2,3}|[0-9]{1,3}))!',
-                '$1%40$2', $tpl_output);
+                '$1&#064;$2', $tpl_output);
 
         return $tpl_output;
     }
