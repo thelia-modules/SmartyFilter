@@ -21,10 +21,10 @@ class MinifyHTMLFilter
 {
     public function filter($tpl_output, $smarty)
     {
-        $tpl_output = preg_replace('/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<![a-zA-Z0-9":\.\-]|\\\|\')\/\/.*))/',
+        $tpl_output = preg_replace('/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<![a-zA-Z0-9"\':\.\-]|\\\|\')\/\/.*))/',
             '',
             $tpl_output);
-        $tpl_output = preg_replace('#(?ix)(?>[^\S ]\s*|\s{2,})(?=(?:(?:[^<]++|<(?!/?(?:textarea|pre)\b))*+)(?:<(?>textarea|pre)\b|\z))#',
+        $tpl_output = preg_replace('#(?ix)(?>[^\S ]\s*|\s{2,})(?=(?:(?:[^<]++|<(?!/?(?:textarea|pre|script)\b))*+)(?:<(?>textarea|pre|script)\b|\z))#',
             ' ', $tpl_output);
 
         return $tpl_output;
