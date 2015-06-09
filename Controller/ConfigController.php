@@ -25,6 +25,8 @@ use Thelia\Model\ConfigQuery;
 class ConfigController extends BaseAdminController
 {
 
+    protected $useFallbackTemplate = true;
+
     public function showFilterListAction()
     {
         return $this->render("filterslist");
