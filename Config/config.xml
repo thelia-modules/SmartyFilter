@@ -25,6 +25,12 @@
 
 
     <services>
+        <service id="smartyfilter.handler.configuration_file" class="SmartyFilter\Handler\ConfigurationFileHandler">
+        </service>
+        <service id="smartyfilter.listener.module_event" class="SmartyFilter\EventListener\ModuleEventListener">
+            <argument type="service" id="smartyfilter.handler.configuration_file" />
+            <tag name="kernel.event_subscriber" />
+        </service>
         <service id="smartyfilter.filter.email" class="SmartyFilter\Filter\EmailFilter" >
             <tag name="thelia.parser.register_output_filter"/>
         </service>
